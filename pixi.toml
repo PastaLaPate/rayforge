@@ -88,6 +88,7 @@ pyflakes = "*"
 pyright = "*"
 ruff = "*"
 pre-commit = "*"
+pytest-xdist = "*"
 
 [feature.website.dependencies]
 nodejs = ">=22"
@@ -128,7 +129,7 @@ cmd = "scripts/with_gdk.sh"
 
 [tasks.test]
 env = { GI_TYPELIB_PATH = "$(pkgconf --variable=typelibdir gobject-introspection-1.0)"}
-cmd = "pytest -v --ignore=tests/ui_gtk"
+cmd = "pytest -n auto --ignore=tests/ui_gtk"
 
 [tasks.uitest]
 env = { GI_TYPELIB_PATH = "$(pkgconf --variable=typelibdir gobject-introspection-1.0):/usr/lib/x86_64-linux-gnu/girepository-1.0"}

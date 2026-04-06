@@ -65,7 +65,7 @@ jobs:
         run: pixi run compile-translations
 
       - name: Run backend tests
-        run: pixi run test -m "not ui and not stress" --log-cli-level=DEBUG
+        run: pixi run test -m "not ui and not stress" --log-cli-level=WARNING
 
   test-stress:
     name: Stress Tests
@@ -91,7 +91,7 @@ jobs:
         run: pixi run compile-translations
 
       - name: Run stress tests
-        run: pixi run test -m stress --log-cli-level=DEBUG
+        run: pixi run test -m stress --log-cli-level=WARNING
 
   test-ui:
     name: UI Tests
@@ -120,4 +120,4 @@ jobs:
         run: pixi run compile-translations
 
       - name: Run UI tests
-        run: xvfb-run pixi run uitest --log-cli-level=DEBUG
+        run: xvfb-run pixi run uitest --log-cli-level=WARNING
